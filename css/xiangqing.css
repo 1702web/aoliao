@@ -1,0 +1,150 @@
+#xiang {
+  border-top: 1px solid #e6e6e6; }
+  #xiang .p a {
+    font: 12px/45px ""; }
+    #xiang .p a:hover {
+      color: red; }
+  #xiang .p span {
+    margin: 0 10px; }
+  #xiang .cen {
+    border: 1px solid #e6e6e6;
+    padding: 35px 0; }
+    #xiang .cen .box {
+      width: 400px;
+      height: 400px;
+      margin-left: 80px;
+      background: #C81417; }
+      #xiang .cen .box img {
+        width: 100%;
+        height: 100%; }
+    #xiang .cen .cen-r {
+      width: 470px;
+      margin-left: 20px; }
+      #xiang .cen .cen-r p {
+        font: 12px/24px "";
+        color: #6f747d;
+        margin-bottom: 16px; }
+      #xiang .cen .cen-r i {
+        display: inline-block;
+        font: 12px/25px "";
+        border: 1px solid #e2e3e8;
+        padding: 0 5px;
+        margin: 0 5px; }
+      #xiang .cen .cen-r .p1 {
+        padding: 8px 0; }
+      #xiang .cen .cen-r .p2 {
+        background: #f7f7f7; }
+        #xiang .cen .cen-r .p2 span {
+          color: #333333; }
+        #xiang .cen .cen-r .p2 em {
+          font: 17px/50px "";
+          color: red;
+          margin: 0 10px; }
+        #xiang .cen .cen-r .p2 del {
+          color: #b2b2b2;
+          font-size: 10px; }
+      #xiang .cen .cen-r .p5 span {
+        display: inline-block;
+        margin-right: 12px;
+        width: 50px;
+        float: left; }
+      #xiang .cen .cen-r .p5 input {
+        float: left;
+        width: 28px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid #e2e3e8; }
+      #xiang .cen .cen-r .p5 img {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 7px; }
+      #xiang .cen .cen-r .p5 .inp1, #xiang .cen .cen-r .p5 .inp2 {
+        outline: medium;
+        width: 20px;
+        height: 20px;
+        background: #FFFFFF; }
+      #xiang .cen .cen-r .p5 a {
+        display: inline-block;
+        width: 140px;
+        height: 40px;
+        background: red;
+        text-align: center;
+        font: 14px/40px "";
+        color: #FFFFFF;
+        margin: 0 19px;
+        position: relative;
+        top: -20px; }
+      #xiang .cen .cen-r .p5 .a1:hover {
+        background: #ff3344; }
+      #xiang .cen .cen-r .p5 .a2 {
+        background: #FFFFFF;
+        border: 1px solid #cccccc;
+        color: #a7a7a7; }
+        #xiang .cen .cen-r .p5 .a2:hover img {
+          display: block; }
+      #xiang .cen .cen-r .p6 span {
+        margin: 0 5px; }
+  #xiang .foot {
+    margin-top: 30px; }
+    #xiang .foot .fo-l {
+      border: 1px solid #AEC3B9;
+      text-align: center; }
+      #xiang .foot .fo-l h2 {
+        width: 185px;
+        font: 14px/45px "";
+        text-align: center;
+        border: 1px solid #A7A7A7; }
+        #xiang .foot .fo-l h2 span {
+          color: red;
+          font-size: 12px;
+          margin: 0 10px; }
+      #xiang .foot .fo-l ul {
+        padding: 20px 0; }
+        #xiang .foot .fo-l ul li dd {
+          font: 12px/45px ""; }
+          #xiang .foot .fo-l ul li dd:hover {
+            color: red; }
+        #xiang .foot .fo-l ul li p {
+          font: 14px/16px "";
+          color: red; }
+    #xiang .foot .foo-r {
+      position: relative;
+      z-index: 999;
+      width: 1000px;
+      border: 1px solid #9A9A9A; }
+      #xiang .foot .foo-r .foot-to {
+        width: 1000px;
+        background: #fafafa;
+        border: 1px solid #e6e6e6;
+        height: 45px; }
+        #xiang .foot .foo-r .foot-to a {
+          display: inline-block;
+          width: 185px;
+          background: #e6e6e6;
+          font: 14px/45px "";
+          text-align: center;
+          border-top: 2px solid #e6e6e6;
+          float: left; }
+          #xiang .foot .foo-r .foot-to a:hover {
+            color: red; }
+        #xiang .foot .foo-r .foot-to .te {
+          background: #FFFFFF;
+          border-top: 2px solid red;
+          position: relative;
+          top: -2px; }
+        #xiang .foot .foo-r .foot-to .foot-to-y {
+          display: none; }
+          #xiang .foot .foo-r .foot-to .foot-to-y .te2 {
+            margin-left: 110px;
+            background: #fafafa; }
+          #xiang .foot .foo-r .foot-to .foot-to-y .te6 {
+            float: right;
+            background: #fafafa;
+            color: red; }
+      #xiang .foot .foo-r .foot-r-t {
+        padding: 20px 0; }
+      #xiang .foot .foo-r img {
+        margin-left: 5px; }
+
+/*# sourceMappingURL=xiangqing.css.map */

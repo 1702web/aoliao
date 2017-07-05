@@ -1,0 +1,183 @@
+#lie .haed {
+  margin: 20px 0;
+  border: 1px solid #9A9A9A; }
+  #lie .haed a:hover {
+    color: red; }
+  #lie .haed h3 {
+    width: 30px;
+    height: 100px;
+    text-align: center;
+    background: #AEC3B9;
+    padding: 25px 0; }
+  #lie .haed ul {
+    padding: 10px 0;
+    display: flex; }
+    #lie .haed ul li img {
+      width: 130px;
+      height: 130px; }
+    #lie .haed ul li dt {
+      border: 1px solid #7FCED2;
+      margin: 0 18px; }
+    #lie .haed ul li dd {
+      width: 120px; }
+    #lie .haed ul li p a {
+      font: 10px/20px ""; }
+    #lie .haed ul li span {
+      color: red;
+      font: 12px/40px ""; }
+    #lie .haed ul li .a a {
+      margin-top: 5px;
+      display: block;
+      width: 70px;
+      font: 14px/20px "";
+      text-align: center;
+      background: #7E7E7E; }
+#lie .cen {
+  position: relative; }
+  #lie .cen .p1-p {
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 169px; }
+    #lie .cen .p1-p .p1-a {
+      z-index: 1;
+      height: 27px;
+      width: 80px;
+      font: 14px/20px "";
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid red;
+      border-bottom: 1px solid #FFFFFF;
+      position: relative;
+      top: 2px; }
+    #lie .cen .p1-p .p1-b {
+      background: #FFFFFF;
+      width: 500px;
+      border: 1px solid red;
+      padding: 12px 0; }
+      #lie .cen .p1-p .p1-b a {
+        font: 12px/24px "";
+        margin: 0 10px; }
+  #lie .cen .p1 {
+    background: #fafafa; }
+    #lie .cen .p1 span {
+      width: 160px;
+      color: red; }
+    #lie .cen .p1 em {
+      display: inline-block;
+      width: 80px;
+      height: 26px;
+      background: #FFFFFF;
+      float: none;
+      text-align: center;
+      border: 1px solid red;
+      font: 14px/26px ""; }
+  #lie .cen p {
+    border: 1px solid #e6e6e6;
+    font: 14px/35px ""; }
+    #lie .cen p em {
+      float: right;
+      margin: 0 5px; }
+    #lie .cen p span {
+      display: inline-block;
+      width: 80px;
+      text-align: right;
+      background: #fafafa; }
+    #lie .cen p a {
+      margin: 0 10px; }
+      #lie .cen p a:hover {
+        color: red; }
+  #lie .cen .cen-z {
+    display: none; }
+  #lie .cen .cen-f {
+    width: 335px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #e6e6e6;
+    border-top: #FFFFFF;
+    margin: 0 auto;
+    text-align: center;
+    font: 14px/40px "";
+    position: relative;
+    bottom: 3px; }
+#lie .foot .le {
+  border: 1px solid #e6e6e6;
+  text-align: center; }
+  #lie .foot .le h4 {
+    width: 190px;
+    text-align: center;
+    font: 12px/40px "";
+    color: #c71417;
+    background: #fafafa;
+    border: 1px solid #e6e6e6; }
+  #lie .foot .le span {
+    color: red;
+    font: 14px/25px ""; }
+#lie .foot .ri {
+  width: 968px; }
+  #lie .foot .ri .ri-hea {
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    width: 988px;
+    padding: 6px; }
+    #lie .foot .ri .ri-hea span {
+      font: 12px/25px "";
+      margin: 0 5px; }
+      #lie .foot .ri .ri-hea span a {
+        display: inline-block;
+        width: 55px;
+        height: 25px;
+        border: 1px solid #e6e6e6;
+        text-align: center; }
+        #lie .foot .ri .ri-hea span a:hover {
+          background: red;
+          border: 1px solid red;
+          color: #FFFFFF; }
+      #lie .foot .ri .ri-hea span .te1 {
+        background: red;
+        border: 1px solid red;
+        color: #FFFFFF; }
+    #lie .foot .ri .ri-hea a:hover {
+      color: red; }
+    #lie .foot .ri .ri-hea a input {
+      margin: 6px 5px 0; }
+    #lie .foot .ri .ri-hea a .te2 {
+      color: red; }
+    #lie .foot .ri .ri-hea i {
+      color: red; }
+  #lie .foot .ri .lebiao .gif {
+    display: block; }
+    #lie .foot .ri .lebiao .gif img {
+      width: 300px;
+      height: 30px;
+      margin: 200px; }
+  #lie .foot .ri .lebiao ul li {
+    margin: 20px 5px 0;
+    border: 1px solid #FFFFFF;
+    padding: 0 5px;
+    width: 220px;
+    float: left; }
+    #lie .foot .ri .lebiao ul li dt img {
+      width: 220px;
+      height: 220px; }
+    #lie .foot .ri .lebiao ul li .d1 {
+      margin: 20px 0; }
+      #lie .foot .ri .lebiao ul li .d1 img {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #FFFFFF; }
+    #lie .foot .ri .lebiao ul li .d2 em {
+      color: red;
+      font: 14px/14px "";
+      margin: 0 5px; }
+    #lie .foot .ri .lebiao ul li .d3 {
+      margin-top: 20px;
+      margin-bottom: 5px; }
+      #lie .foot .ri .lebiao ul li .d3 a {
+        font: 12px/20px ""; }
+        #lie .foot .ri .lebiao ul li .d3 a:hover {
+          color: red; }
+    #lie .foot .ri .lebiao ul li:hover {
+      box-shadow: 0px 0px 1px #000; }
+
+/*# sourceMappingURL=liebiao.css.map */

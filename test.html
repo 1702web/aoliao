@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css" />
+		<style>
+			/*#box{
+				position: relative;
+				margin: 50px auto ;
+				height: 50px;
+				width: 205px;
+				border: 1px solid #C71417;
+				overflow: hidden;
+			}*/
+			/*li{
+				width: 50px;
+			    height:50px;
+				border:1px solid #6699FF;
+				float: left;
+			}
+			
+			#box1{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:360px;
+				
+			}
+			#butLeft{
+				background: #FFFFFF;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:20px;
+				height: 50px;
+			}
+			#butRight{
+				background: #FFFFFF;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width:20px;
+				height: 50px;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script>
+	var left=20
+	var jqid="#box";
+	var boxwidth=250;
+	var boxheight=50;
+    var box1width=365;
+    var liwidth=50
+    var liheight=50;
+    var butheight=50;
+    var buwidth=20;
+	var lilength=7;
+	var ord=1;
+	$(function(){
+		
+		 init();
+		
+	})
+	
+	function dong(ord){
+		$("#butLeft").click(function(){
+			moverLeft(ord)
+		})
+		$("#butRight").click(function(){
+			moverRight(ord)
+		})
+	}
+	function init(){
+		
+	    var str="<div id='box1' style='left:20px'><ul class='clear'>"
+		for(var i=0;i<lilength;i++){
+			str+="<li></li>"
+		}
+		str+="</ul></div><div id='butLeft'>左</div><div id='butRight'>右</div></div>"
+		$(jqid).append(str);
+		//$("#box1").append(str);
+		$(jqid).css({position: "relative",
+				margin: "50px auto" ,
+				height:boxheight+"px",
+				width: boxwidth+"px",
+				border:" 1px solid #C71417",
+				overflow: "hidden"
+		});
+		
+		$("#box1").css({
+			    position: "absolute",
+				top: "0",
+				left: "0",
+				width:box1width+"px"
+		})
+		$("#box1 li").css({
+			    width: liwidth+"px",
+			    height:liheight+"px",
+				border:"1px solid #6699FF",
+				float: "left",
+		});
+		$("#butLeft").css({
+			   background:" #FFFFFF",
+				position: "absolute",
+				top:"0",
+				left: "0",
+				width:buwidth+"px",
+				height: butheight+"px",
+		})
+		$("#butRight").css({
+			  	background:" #FFFFFF",
+				position:" absolute",
+				top: "0",
+				right: "0",
+				width:buwidth+"px",
+				height:butheight+"px",
+		})
+		 dong(ord);
+    }
+	
+	
+		
+ 
+	function moverLeft(ord){
+		if(parseInt($("#box1")[0].style.left)>-150){
+			$("#box1").stop(true,true);
+			left-=ord*50
+			
+			$("#box1").animate({left:""+left+""},1000);
+		}
+		
+	}
+	function moverRight(ord){
+		if(parseInt($("#box1")[0].style.left) <0){
+		   $("#box1").stop(true,true);
+			left+=ord*50
+			
+			$("#box1").animate({left:""+left+""},1000);
+		}
+		
+	}
+</script>
