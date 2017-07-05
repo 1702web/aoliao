@@ -56,7 +56,7 @@ $(function(){
 
 function crea(josn){
 		for(var i=0;i<josn.length;i++){
-		var str="<li ord='"+josn[i].goodsId+"'><a href='xiangqing.html'><dt><img class='imgcl' src='"+josn[i].goodsImg+"'/></dt><dd class='d1'><a href='#'><img src='"+josn[i].goodsImg+"'/></a><a href='#'><img src='"+josn[i].beiyong1+"'/></a></dd><dd class='d2'><em>￥"+josn[i].goodsPrice+"</em><del>￥"+josn[i].goodsCount+"</del></dd><dd class='d3'><a href='xiangqing.html'>"+josn[i].goodsName+"</a></dd></a></li>"
+		var str="<li ord='"+josn[i].goodsId+"'><a href='xiangqing.html'><dt><img class='imgcl' src='"+josn[i].goodsImg+"'/></dt><dd class='d1'><img src='"+josn[i].goodsImg+"'/><img src='"+josn[i].beiyong1+"'/></dd><dd class='d2'><em>￥"+josn[i].goodsPrice+"</em><del>￥"+josn[i].goodsCount+"</del></dd><dd class='d3'>"+josn[i].goodsName+"</dd></a></li>"
 		    $(".list").append(str);  				
 		}
 		
@@ -66,7 +66,7 @@ function  bian(){
 	$(".d1").on("mouseenter","img",function(){
 		 $(this).css("border","1px solid red")
 		
-		 var img=$(this).parents("dd").siblings("dt").children().attr("src")
+		 var img=$(this).parents("dd").siblings("dt").children()
 		 $(img).attr("src",$(this).attr("src"))
 	});
   $(".d1").on("mouseleave","img",function(){
