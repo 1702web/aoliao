@@ -28,6 +28,8 @@ header {
   header .ban {
     margin-top: 20px; }
 
+#show .show-zo {
+  display: none; }
 #show .show-to {
   padding-left: 18px;
   font: 12px/45px "";
@@ -63,22 +65,58 @@ header {
     #show .show-bo .show-re li del {
       font: 12px/30px "";
       margin-left: 5px; }
-#show .show-bi tr {
-  text-align: center;
-  border: 1px soli #E6E6E6; }
-#show .show-bi td {
-  text-align: center; }
-  #show .show-bi td .img {
-    width: 60px;
-    height: 60px; }
-  #show .show-bi td .size a {
-    font: 14px/70px ""; }
-#show .show-bi .t1 {
-  background: #EAEAEA;
-  font: 14px/30px ""; }
-  #show .show-bi .t1 td {
-    width: 120px; }
-  #show .show-bi .t1 .d1 {
-    width: 560px; }
+#show .show-bi {
+  margin-top: 20px; }
+  #show .show-bi tr {
+    text-align: center;
+    border: 1px solid #E6E6E6; }
+  #show .show-bi .d4 {
+    color: #ff7c00; }
+  #show .show-bi .d2 {
+    color: red; }
+  #show .show-bi td {
+    padding: 20px 0;
+    text-align: center; }
+    #show .show-bi td .img {
+      width: 60px;
+      height: 60px; }
+    #show .show-bi td .size a {
+      display: inline-block;
+      width: 490px;
+      font: 14px/30px ""; }
+      #show .show-bi td .size a:hover {
+        color: red; }
+    #show .show-bi td input {
+      width: 23px;
+      height: 22px;
+      border: 1px solid #EAEAEA;
+      outline: medium; }
+  #show .show-bi .t1 {
+    background: #EAEAEA;
+    font: 14px/30px ""; }
+    #show .show-bi .t1 td {
+      width: 120px; }
+    #show .show-bi .t1 .d1 {
+      width: 560px; }
+  #show .show-bi .show-uo {
+    background: #f5f5f5;
+    border: 1px solid #e6e6e6;
+    padding: 0 40px; }
+    #show .show-bi .show-uo em {
+      margin-right: 470px; }
+    #show .show-bi .show-uo span {
+      font: 12px/90px "";
+      margin: 0 50px; }
+    #show .show-bi .show-uo .zj {
+      color: red; }
+    #show .show-bi .show-uo a {
+      display: inline-block;
+      width: 120px;
+      height: 45px;
+      background: #ff3344;
+      text-align: center;
+      color: #FFFFFF;
+      font: 14px/45px "";
+      margin: 0 10px; }
 
 /*# sourceMappingURL=shopping.css.map */

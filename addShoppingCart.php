@@ -10,7 +10,7 @@
 	$conn = mysql_connect("localhost","root","lihai");
 	
 	//2）、选择数据库（找目的地）
-	mysql_select_db("LeMabase",$conn);
+	mysql_select_db("aoliao",$conn);
 	
 	//3）、传输数据（过桥）
 	$Sql="select * from shoppingCart where vipName='".$vipName."' and  goodsId='".$goodsId."'";	

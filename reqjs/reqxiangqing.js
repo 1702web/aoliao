@@ -1,11 +1,11 @@
-require(['jquery-1.8.3.min','reqcookieTools'],function(b,cookie){
+require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools'],function(b,cookie){
 	$.get("getGoodsInfo.php",{goodsId:cookie.getCookie("doodsId")},function(data){
-		  var json= eval('('+data+')')
-		  $(".jie1").html(json.goodsType)
-		   $(".p1").html(json.goodsName)
-		   $(".jie2").html("￥"+json.goodsPrice)
-		  $(".jie3").html("￥"+json.goodsCount)
-		  $(".box img").attr("src",json.goodsImg)
+		  var json= eval('('+data+')');
+		  $(".jie1").html(json.goodsType);
+		  $(".p1").html(json.goodsName);
+		  $(".jie2").html("￥"+json.goodsPrice);
+		  $(".jie3").html("￥"+json.goodsCount);
+		  $(".box img").attr("src",json.goodsImg); 
     });
 	$("header").load("index.html #head");
 	$("nav").load("index.html #nav")
@@ -51,5 +51,33 @@ require(['jquery-1.8.3.min','reqcookieTools'],function(b,cookie){
 		 	 $(".foot-to-y").css("display","none")
 		 }
 	});
-	
+	//console.log(document.cookie)
+	$(".a1").click(function(){
+		$("#zhe").css("display","block");
+		 var vipName=cookie.getCookie("userName")
+		 var goods=cookie.getCookie("doodsId");
+		 var goodsCount=$(".inp").val();
+		  $.get("addShoppingCart.php",{vipName:vipName,goodsId:goods,goodsCount:goodsCount},function(data){
+		  	 if(data=="1"){
+		  	 	 $(".img").css("display","none")
+		  	 	 $(".zhedang").animate({"top":"0"},500)
+		  	 	 go()
+		  	 }if(data=="0"){
+		  	    alert("失败")	
+		  	 }
+		  	  
+		  })
+		return false;
+	})
 })
+function go(){
+	$(".ji").click(function(){
+		 $(".zhedang").animate({"top":"-300"},500)
+		 $("#zhe").css("display","none");
+		 $(".img").css("display","block")
+		 return false
+	 })
+		 
+	
+	
+}
