@@ -3,46 +3,88 @@ require(["js/jquery-1.8.3.min.js","reqjs/reqcookieTools.js"],function(a,cookie){
 	$("footer").load("index.html #footer")
 	 
   
-   console.log(cookie.getCookie("userName"))
+   //console.log(cookie.getCookie("userName"))
    $.get("getShoppingCart.php",{vipName:cookie.getCookie("userName")},function(data){
    	  var josn=eval('('+data+')')
    	  for(var i=0;i<josn.length;i++){
-var str= " <tr><td><input type='checkbox' checked='checked'/></td>"
+var str= " <tr ord="+josn[i].goodsId+"><td><input type='checkbox' checked='checked'/></td>"
 +"<td class='d1'><dt class='left'><img class='img' src='"+josn[i].goodsImg+"'/></dt><dd class='left size'><a href='#'>"+josn[i].goodsName+"</a></dd></td>"
 +"<td class='dd1'>"+josn[i].goodsPrice+"</td>"
 + "<td class='d6'><input class='in1' type='button' value='-'/><input class='in10' type='text' value='"+josn[i].goodsSum+"' /><input class='in3' type='button' value='+' /></td>"
 +"<td class='d4'>00</td><td class='d2'>4354</td>"
-+" <td class='d5' ><p><a href='#'>已入手厂家</a></p><p><a href='#'>删除</a></p></td></tr>"
++" <td class='d5' ><p><a href='#'>已入手厂家</a></p><p><a class='rem' href='#'>删除</a></p></td></tr>"
    $("tbody").append(str);}
 	   zeng();
-	   dian()
-	   cang()
-   })
-   
-})
-function dian(){
-	 $(".in1").click(function(){
-   		
-   	    var num=parseInt($(this).next().val());
-   	    $(this).next().val(num-1)
-   	      	    if($(this).next().val()<1){
-   	     	 $(this).next().val("1");
-   	     }
-   	     zeng()
-   })
-  
-     $(".in3").click(function(){
-   		//$(this).siblings(".in10").val();
-   	    var num=parseInt($(this).siblings(".in10").val());
-   	     $(this).siblings(".in10").val(num+1);
-   	     if($(this).siblings(".in10").val()>10){
-   	     	$(this).siblings(".in10").val("10")
-   	     }
-   	    zeng()
+	   dian();
+	  
+	   remove();
    });
-	
-	
-}
+   //删除商品
+   
+   function remove(){
+		
+		$(".rem").click(function(){
+			var that= this;
+			var   goodsid= $(this).parents("tr").attr("ord");
+			$.get("deleteGoods.php",{vipName:cookie.getCookie("userName"),goodsId:goodsid},function(data){
+				if(data=="1"){
+					$(that).parents("tr").remove()
+					
+					 zeng()
+				}else{
+					alert("删除失败");
+				}
+				
+			})
+			return false
+		})
+	}
+   //修改商品
+   function dian(){
+		 $(".in1").click(function(){
+	   		
+	   	    var num=parseInt($(this).next().val())-1;
+	   	     $(this).next().val(num)
+	   	     if($(this).next().val()<1){
+	   	     	 $(this).next().val("1");
+	   	     	 return ;
+	   	     }
+	   	     var that=this;
+	   	     var goodsid=$(this).parents("tr").attr("ord")
+	   	    
+	   	    lian(cookie.getCookie("userName"),goodsid,num);
+	   	  
+	   })
+  
+	     $(".in3").click(function(){
+	  	     if($(this).siblings(".in10").val()>10){
+	   	     	$(this).siblings(".in10").val("10")
+	   	     	return ;
+	   	     }
+	   	      var num=parseInt($(this).siblings(".in10").val())+1;
+	   	        $(this).siblings(".in10").val(num);
+	   	        var goodsid=$(this).parents("tr").attr("ord")
+	   	       lian(cookie.getCookie("userName"),goodsid,num)
+
+	    });	
+     }
+   //连后台函数
+   function lian(name,goods,num){
+   		$.get("updateGoodsCount.php",{vipName:name,goodsId:goods,goodsCount:num},function(data){
+		   	   	   if(data=="1"){
+		   	   	   	    if(num1=1){
+		   	   	   	    	
+		   	   	   	    }
+		   	   			 zeng()
+		   	   	   }else{
+		   	   	     
+		   	   	   	  alert("修改失败"); 
+		   	   	   }
+   	  	});		
+   }
+})
+
+//计算的方法
 function zeng(){
 	//var num1=parseInt($(".dd1").html());
 	//var num2=parseInt($(".in10").val());
@@ -58,6 +100,7 @@ function zeng(){
 	}
 	$(".num").html("￥"+reu);
 	$(".zj").html("￥"+reu1);
+	cang()
 }
 function cang(){
 	if($(".num").html()=="￥0"){

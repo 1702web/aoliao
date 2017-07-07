@@ -1,11 +1,36 @@
-require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools'],function(b,cookie){
+require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools','reqjs/shougoods.js'],function(b,cookie,jing){
+	  console.log(cookie.getCookie("doodsId"))
 	$.get("getGoodsInfo.php",{goodsId:cookie.getCookie("doodsId")},function(data){
 		  var json= eval('('+data+')');
 		  $(".jie1").html(json.goodsType);
 		  $(".p1").html(json.goodsName);
 		  $(".jie2").html("￥"+json.goodsPrice);
 		  $(".jie3").html("￥"+json.goodsCount);
-		  $(".box img").attr("src",json.goodsImg); 
+		  var img1=json.goodsImg;
+    	  var img2=json.beiyong1;
+		 new jing.ShowGoods({
+		 	  	boxId:"show",
+				boxWidth:500,
+				boxHeight:500,
+				times:2,
+				imgArr:[img1,img2],
+				imgWidth:380,
+				imgHeight:380,
+				zoomColor:'yellow',
+				zoomWidth:150,
+				zoomHeight:150,
+				listWidth:100,
+				listHeight:100,
+				listBorderColor:'#AAA',
+				listBorderHeighColor:'red',
+				listSpace:5,
+				listNum:4,
+				btnWidth:30,
+				btnColor:'black',
+				btnFontSize:45,
+				btnFontColor:'white',
+				btnFontHeighColor:'red'  	
+		 });		  
     });
 	$("header").load("index.html #head");
 	$("nav").load("index.html #nav")
@@ -69,6 +94,7 @@ require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools'],function(b,cookie){
 		  })
 		return false;
 	})
+
 })
 function go(){
 	$(".ji").click(function(){
