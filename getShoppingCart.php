@@ -7,12 +7,19 @@
 	$conn = mysql_connect("localhost","root","lihai");
 	
 	//2）、选择数据库（找目的地）
-	mysql_select_db("aoliao",$conn);
+	if(!mysql_select_db("aoliao",$conn)){
+		die("数据库选择失败".mysql_error());
+	}
 	
 	//3）、传输数据（过桥）
 	$sqlstr = "select * from goodsInfo g,shoppingCart s
 			   where g.goodsId = s.goodsId  and s.vipName = '".$vipName."'";
+	
 	$result = mysql_query($sqlstr,$conn);//执行查询的sql语句后，有返回值，返回的是查询结果
+		
+	if(!$result){
+		die("SQL语句执行失败".mysql_error());
+	}
 			
 	//查询列数
 	 $query_cols = mysql_num_fields($result);
@@ -34,7 +41,7 @@
 		,'beiyong6':'".$query_row[12]."','beiyong7':'".$query_row[13]."'
 		,'beiyong8':'".$query_row[14]."','beiyong9':'".$query_row[15]."'
 		,'beiyong10':'".$query_row[16]."','beiyong11':'".$query_row[17]."'
-		,'beiyong12':'".$query_row[18]."','beiyong13':'".$query_row[19]."','goodsSum':'".$query_row[22]."'
+		,'beiyong12':'".$query_row[18]."','beiyong13':'".$query_row[19]."'
 		}";
 		$query_row = mysql_fetch_array($result);
 		if($query_row){

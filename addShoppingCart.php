@@ -1,4 +1,5 @@
 <?php
+	//添加到购物车
 	header("Content-Type:text/html;charset=utf-8");
 	//1、接受客户端的数据（用户输入的数据）
 	$vipName   = $_REQUEST['vipName'];
@@ -10,33 +11,33 @@
 	$conn = mysql_connect("localhost","root","lihai");
 	
 	//2）、选择数据库（找目的地）
-	mysql_select_db("aoliao",$conn);
+	if(!mysql_select_db("aoliao",$conn)){
+		die("数据库选择失败".mysql_error());
+	};
 	
 	//3）、传输数据（过桥）
-	$Sql="select * from shoppingCart where vipName='".$vipName."' and  goodsId='".$goodsId."'";	
-	$result=mysql_query($Sql,$conn);	
-	$rows=mysql_fetch_array($result);
-	//如果有值当值 执行修改
-	if($rows){
-		$count=$rows['goodsCount'];
-		$goodsCount=$goodsCount+$count;
-			//如果有执行添加事件
-			$sqlstr = "update shoppingCart set goodsCount=".$goodsCount." where vipName='".$vipName."' and goodsId='".$goodsId."'";			
-			$result=1;
-			if(!mysql_query($sqlstr,$conn)){
-				$result=0;
-			}
-			mysql_close($conn);
-			echo $result;
+	$result = mysql_query("select * from shoppingCart where vipName='".$vipName."' and goodsId='".$goodsId."'",$conn);
+	//3.1)先查找该商品是否在购物车中存在
+	if(mysql_num_rows($result)>0){
+		//如果存在，则使用update语句
+		$sqlstr = "update shoppingCart set goodsCount=goodsCount+".$goodsCount." where vipName='".$vipName."' and goodsId='".$goodsId."'";
 	}else{
-		//如果没有执行添加事件
-		$sqlstr = "insert into shoppingCart values('".$vipName."','".$goodsId."',".$goodsCount.")";
-
-		$result=1;
-		if(!mysql_query($sqlstr,$conn)){
-				$result=0;
-		}
-		mysql_close($conn);
-		echo $result;
+		//如果不存在，则使用insert语句	
+		$sqlstr = "insert into shoppingCart values('".$vipName."','".$goodsId."','".$goodsCount."')";		
+	}
+	
+	$result=mysql_query($sqlstr,$conn);	
+	//4）、关闭连接（拆桥）
+	mysql_close($conn);
+	
+	if(!$result){
+		die("添加失败".mysql_error());
+	}	
+	
+	//3、给客户端返回（响应） 1：表示添加成功 0：表示添加失败
+	if($result>0){
+		echo 1;	
+	}else{
+		echo 0;
 	}
 ?>

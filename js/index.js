@@ -19,9 +19,6 @@
 	 	   	    left-=45;
 	 	   	   
 	 	   }
-	 	   
-	 	
-
 	 	   $(".inp1").focus(function(){
 	 	   	     $(".inp1").attr("placeholder","请输入你想要的商品名成") 
 	 	   })
@@ -78,7 +75,6 @@
 	 	  	    	 $("#ce-le ul").children().eq(6).attr("class","te8").siblings().removeAttr("class")  
 	 	  	    }
 	 	  })
-	 	
 	 	  $("#ce-le").on("click","li",function(){
 	 	  	  //  $(this).attr("class","te8").siblings().removeAttr("class")
 	 	  	    var num =  $("#ce-le li").index($(this));
@@ -110,7 +106,6 @@
 	 	  	    	//$("body").scrollTop(4787);
 	 	  	    	$("body").animate({scrollTop: '+4787px'}, "slow")
 	 	  	    }
-	 	  	 
 	 	  	   return false;
 	 	  })
 	 })

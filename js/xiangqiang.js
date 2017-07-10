@@ -57,28 +57,26 @@ $(function(){
 }) 
 function  fang(img1,img2){
 	new ShowGoods({
-		boxId:"show",
-		boxWidth:500,
-		boxHeight:500,
-		times:2,
-		imgArr:[img1,img2],
-		imgWidth:380,
-		imgHeight:380,
-		zoomColor:'yellow',
-		zoomWidth:150,
-		zoomHeight:150,
-		listWidth:100,
-		listHeight:100,
-		listBorderColor:'#AAA',
-		listBorderHeighColor:'red',
-		listSpace:5,
-		listNum:4,
-		btnWidth:30,
-		btnColor:'black',
-		btnFontSize:45,
-		btnFontColor:'white',
-		btnFontHeighColor:'red' 
-)
-	
-	
+        boxId: "show",
+        boxWidth: 500,
+        boxHeight: 500,
+        times: 2,
+        imgArr: [img1, img2],
+        imgWidth: 380,
+        imgHeight: 380,
+        zoomColor: 'yellow',
+        zoomWidth: 150,
+        zoomHeight: 150,
+        listWidth: 100,
+        listHeight: 100,
+        listBorderColor: '#AAA',
+        listBorderHeighColor: 'red',
+        listSpace: 5,
+        listNum: 4,
+        btnWidth: 30,
+        btnColor: 'black',
+        btnFontSize: 45,
+        btnFontColor: 'white',
+        btnFontHeighColor: 'red'
+    })
 }
