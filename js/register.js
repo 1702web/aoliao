@@ -36,8 +36,8 @@ $(function(){
 						   	 	  	   	   $(that).next().next("p").children("em").html("用户已经注册");
 						   	 	  	   	   $(that).next().next("p").children("em").css("display","block").siblings().css("display","none") 
 						   	 	  	   }else{
-						   	 	  	   	  	   $(that).next().next("p").children("em").html("可以注册了，亲");
-						   	 	  	   	       $(that).next().next("p").children("em").css("display","block").siblings().css("display","none")
+						   	 	  	   	  	$(that).next().next("p").children("em").html("可以注册了，亲");
+						   	 	  	   	    $(that).next().next("p").children("em").css("display","block").siblings().css("display","none")
 						   	 	  	   }
 					   	 	  	});
 					   	

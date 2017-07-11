@@ -1,6 +1,11 @@
 require(["reqjs/reqcookieTools.js","js/jquery-1.8.3.min.js"],function(cookie){
 	$("nav").load("index.html #nav");
-	$("footer").load("index.html #fooer");
+	$("footer").load("index.html #fooer",function () {
+        var cook=cookie.getCookie("userName");
+        if(cook!=""){
+            $(".deng").html("欢迎亲爱的会员："+cook+"")
+        }
+    });
 	 
   
    //console.log(cookie.getCookie("userName"))
@@ -96,7 +101,7 @@ function zeng(){
 	cang()
 }
 function cang(){
-	if($(".num").html()=="￥0"){
+	if($(".num").html()=="0"){
 		$(".show-zo").css("display","block");
 		$(".show-bi").css("display","none");
 	}else{

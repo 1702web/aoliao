@@ -1,18 +1,23 @@
 $(function(){
+
 	$(".gif").show();
 	$("header").load("index.html #head");
 	$("nav").load("index.html #nav");
 	$("section").load("index.html #header");
-	
+
 	$("footer").load("index.html #footer",function(){
-		$(".head-na-t").css({"display":"none"});
-		
-		$(".head-na-l").mouseout(function(){
-		   $(".head-na-t").css("display","none")
-		})
+        $(".head-na-t").css("display", "none")
+		$(".head-na-l").mouseout(function() {
+            $(".head-na-t").css("display", "none")
+        });
 		$(".head-na-l").mouseover(function(){
 		   $(".head-na-t").css("display","block")
 		});
+
+        var cook=getCookie("userName");
+        if(cook!=""){
+            $(".deng").html("欢迎亲爱的会员："+cook+"")
+        }
 	});
 
 	 $(".gif").ajaxStop(function(){
@@ -48,6 +53,8 @@ $(function(){
 		saveCookie("doodsId",$(this).attr("ord"),1)
 	})
 })
+
+
 function crea(josn){
 		for(var i=0;i<josn.length;i++){
 		var str="<li ord='"+josn[i].goodsId+"'><a href='xiangqing.html'><dt><img class='imgcl' src='"+josn[i].goodsImg+"'/></dt><dd class='d1'><img src='"+josn[i].goodsImg+"'/><img src='"+josn[i].beiyong1+"'/></dd><dd class='d2'><em>￥"+josn[i].goodsPrice+"</em><del>￥"+josn[i].goodsCount+"</del></dd><dd class='d3'>"+josn[i].goodsName+"</dd></a></li>"

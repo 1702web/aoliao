@@ -1,15 +1,15 @@
-seajs.use(["cmdcookieTools","banner","floor","daojishi"],function(cook,slide,ceng,dao){
+seajs.use(["cookieTools","banner","floor","daojishi"],function(cook,slide,ceng,dao){
 	     //楼层引来的
 		var arr=[600,1490,1924,2687,3387,4087,4787];
 		ceng.lou(arr,"#ce-le","te8");
      	 var cook=cook.getCookie("userName");
      	 //倒计时
-    setInterval(function(){dao.ShowCountDown(2017,7,11,'divdown1');}, 1000)
+	dao.
      	 //获取name的值
 	 	if(cook!=""){
-					$(".deng").html("欢迎亲爱的会员："+cook+"") 
-		}
-						
+	 	    $(".deng").html("欢迎亲爱的会员："+cook+"") 
+	 	}
+	 	
 	 	$(".he-in").click(function(){
 		 	   	 	   $("#head").css("display","none");
 		 	    });
@@ -79,54 +79,6 @@ seajs.use(["cmdcookieTools","banner","floor","daojishi"],function(cook,slide,cen
 		bigBtnFontColor:"white",
 		btnHasOrd:false
 	})
-	//聊天框
-	//回车回复信息
-	$("textarea").keydown(function(event){
-		var e = event || window.event
-		if(e.keyCode ==13){
-		
-			chuan()
-			return false
-		}
-	
-	})
-	$(".tan-fo").on("click","a",function(){
-		var num = $(".tan-fo").children().index($(this));
-		if(num==0){
-		    $("#tan").css("display","none")   
-		  };
-		  if(num==1){
-		       chuan();
-		  }
-		  return  false;
-	})
-	 $("textarea").val("");
-  function chuan(){
-  		var d=new Date();
-  		var shi=d.getHours();
-  		var ff=d.getMinutes();	
-  	   var str =$("textarea").val()
-		 if(str!=""){
-		    $(".tan-co").append("<div class='left mi'><p>"+str+"</p><span>"+shi+":"+ff+" </span></div>")
-		    $("textarea").val("");
-		    $.get("huihua.php",{"usestr":str},function(data){
-		    	if(data!=""){
-			      	var	json=eval('('+data+')'); 
-			        $(".tan-co").append("<div class='right mi'><p>"+json.endstr+"</p><span>"+shi+":"+ff+" </span></div>")
-			         $("textarea").val("");
-			         	$(".tan-co").scrollTop($(".tan-co")[0].scrollHeight)
-		        }
-		    })
-		}
-		 console.log($(".tan-co")[0].scrollHeight)
-  		$(".tan-co").scrollTop($(".tan-co")[0].scrollHeight)
-      }
-   $(".kefu").click(function(){
-   		$("#tan").css("display","block");
-   		
-    return false
-   })
-   
 })
 //..........................闹着 玩那。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
 ///参数 ：arr数组        #ce-lejq的复原的id   //要求必须是的ul/li里的格式切是a标签 /  点着的class名切其他的li不能再起class名

@@ -19,8 +19,7 @@
 		
 	if(!$result){
 		die("SQL语句执行失败".mysql_error());
-	}
-			
+	}	
 	//查询列数
 	 $query_cols = mysql_num_fields($result);
 	 //echo "列数：".$query_cols;

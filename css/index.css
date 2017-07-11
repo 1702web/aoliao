@@ -299,4 +299,59 @@
     top: 15px;
     right: 0; }
 
+#tan {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 415px;
+  border: 1px solid #000000;
+  background: #FFFFFF;
+  z-index: 9999; }
+  #tan .tan-to {
+    background: #54a6f1; }
+    #tan .tan-to span {
+      color: #FFFFFF;
+      font: 12px/42px ""; }
+    #tan .tan-to input {
+      background: #54a6f1;
+      float: right;
+      border: none;
+      width: 50px;
+      height: 20px;
+      font-size: 14px;
+      color: #FFFFFF;
+      outline: medium; }
+    #tan .tan-to img {
+      margin: 0 5px 0 20px; }
+  #tan .tan-co {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    #tan .tan-co img {
+      width: 225px;
+      height: auto;
+      margin: 60px 90px; }
+    #tan .tan-co .mi {
+      margin: 0 20px;
+      width: 335px; }
+    #tan .tan-co p {
+      font: 12px/20px "";
+      color: #000000;
+      border: 1px solid #d5d5d5;
+      padding: 10px; }
+    #tan .tan-co span {
+      font: 10px/25px "";
+      color: #d9c6c2; }
+  #tan textarea {
+    width: 400px;
+    height: 90px;
+    font: 14px/20px "";
+    resize: none; }
+  #tan .tan-fo a {
+    float: right;
+    font: 12px/30px "";
+    margin: 10px;
+    color: #000000; }
+
 /*# sourceMappingURL=index.css.map */

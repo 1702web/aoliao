@@ -1,5 +1,6 @@
 require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools','reqjs/shougoods.js'],function(b,cookie,jing){
-	  console.log(cookie.getCookie("doodsId"))
+	  //console.log(cookie.getCookie("doodsId"))
+
 	$.get("getGoodsInfo.php",{goodsId:cookie.getCookie("doodsId")},function(data){
 		  var json= eval('('+data+')');
 		  $(".jie1").html(json.goodsType);
@@ -48,7 +49,11 @@ require(['reqjs/jquery-1.8.3.min','reqjs/reqcookieTools','reqjs/shougoods.js'],f
  	   	   $(".back")[i].style.background="url(img/right-guide.png) no-repeat "+(left)+"px center" ;
  	   	   
  	   	    left-=45; 
- 	   };   
+ 	   };
+        var cook=cookie.getCookie("userName");
+        if(cook!=""){
+            $(".deng").html("欢迎亲爱的会员："+cook+"")
+        }
 	});
 	$(".inp1").click(function(){
 		
